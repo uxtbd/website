@@ -12,218 +12,245 @@
 	<meta property="twitter:description" content="coolshit">
         <title>uxtbd</title>
         <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet" />
-        <style>
-            :root {
-                --meat-red: #5a0606;
-                --bruise-purple: #14041a;
-                --bile-yellow: #e2c044;
-                --text-green: #3fff00;
-                --spo2-cyan: #00f2ff;
-                --neglect: 0;
-                --glitch: 0px;
-            }
+	<style>
+    :root {
+        --meat-red: #5a0606;
+        --bruise-purple: #14041a;
+        --bile-yellow: #e2c044;
+        --text-green: #3fff00;
+        --spo2-cyan: #00f2ff;
+        --neglect: 0;
+        --glitch: 0px;
+    }
 
-            * {
-                box-sizing: border-box;
-                font-family: "Special Elite", monospace;
-                margin: 0;
-                padding: 0;
-            }
-            body {
-                background: #000;
-                overflow: hidden;
-                width: 100vw;
-                height: 100vh;
-                color: var(--text-green);
-            }
+    * {
+        box-sizing: border-box;
+        font-family: "Special Elite", monospace;
+        margin: 0;
+        padding: 0;
+        /* Prevents text scaling on mobile orientation change */
+        -webkit-text-size-adjust: 100%;
+    }
 
-            #dynamic-header {
-                transition: color 0.5s ease;
-                text-shadow: 0 0 5px rgba(226, 192, 68, 0.2);
-                font-variant-numeric: tabular-nums;
-                font-size: clamp(1.2rem, 3vw, 1.8rem);
-                letter-spacing: 2px;
-            }
+    body {
+        background: #000;
+        overflow: hidden;
+        /* Use dynamic viewport height for mobile browsers */
+        width: 100vw;
+        height: 100dvh; 
+        color: var(--text-green);
+        position: fixed; /* Prevents "pull to refresh" on some devices */
+    }
 
-            #viewport {
-                position: absolute;
-                inset: 0;
-                filter: url("#flesh-warp");
-                opacity: calc(1 - (var(--neglect) * 0.85));
-                z-index: 1;
-                display: flex;
-                flex-direction: column;
-                transition: opacity 2s ease;
-            }
+    #dynamic-header {
+        transition: color 0.5s ease;
+        text-shadow: 0 0 5px rgba(226, 192, 68, 0.2);
+        font-variant-numeric: tabular-nums;
+        font-size: clamp(1rem, 5vw, 1.8rem);
+        letter-spacing: 2px;
+    }
 
-            #secret-logs {
-                margin-top: 20px;
-                height: 400px;
-                overflow-y: hidden;
-                border-left: 2px solid var(--meat-red);
-                padding-left: 15px;
-                display: flex;
-                flex-direction: column-reverse;
-                mask-image: linear-gradient(to top, black 80%, transparent 100%);
-                -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);
-            }
+    #viewport {
+        position: absolute;
+        inset: 0;
+        filter: url("#flesh-warp");
+        opacity: calc(1 - (var(--neglect) * 0.85));
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        transition: opacity 2s ease;
+    }
 
-            #secret-logs p {
-                margin-bottom: 5px;
-                font-size: clamp(0.9rem, 1.3vw, 1.2rem);
-                line-height: 1.4;
-                white-space: pre-wrap;
-                animation: terminal-flicker 0.15s infinite;
-                transform: translateZ(0);
-                will-change: transform, opacity;
-            }
+    header {
+        height: 10vh;
+        background: var(--bruise-purple);
+        border-bottom: 6px ridge var(--meat-red);
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+    }
 
-            @keyframes terminal-flicker {
-                0% {
-                    opacity: 0.98;
-                }
-                50% {
-                    opacity: 1;
-                }
-                100% {
-                    opacity: 0.99;
-                }
-            }
+    main {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        overflow: hidden;
+    }
 
-            header {
-                height: 12vh;
-                background: var(--bruise-purple);
-                border-bottom: 6px ridge var(--meat-red);
-                display: flex;
-                align-items: center;
-                padding: 0 40px;
-            }
-            main {
-                display: flex;
-                flex-grow: 1;
-            }
-            .bio-sidebar-placeholder {
-                width: 35%;
-                border-right: 5px double var(--meat-red);
-            }
-            .user-content {
-                width: 65%;
-                padding: 60px;
-                background: rgba(5, 2, 2, 0.95);
-            }
+    /* MOBILE ADJUSTMENTS */
+    @media (max-width: 768px) {
+        main {
+            flex-direction: column; /* Stack sidebar and content */
+        }
+        .bio-sidebar-placeholder {
+            width: 100% !important;
+            height: 15vh;
+            border-right: none !important;
+            border-bottom: 5px double var(--meat-red);
+        }
+        .user-content {
+            width: 100% !important;
+            padding: 20px !important;
+            height: 75vh;
+        }
+        .clinical-box.initial {
+            width: 90vw !important;
+            left: 5vw !important;
+            top: 12vh !important;
+            padding: 10px !important;
+        }
+        .clinical-box.focus {
+            transform: scale(1.1) !important; /* Scale down on mobile or it clips */
+            width: 90vw !important;
+        }
+        #v-oxy {
+            font-size: 3rem !important;
+        }
+        #heart-canvas {
+            height: 120px !important;
+        }
+    }
 
-            #static-vitals-layer {
-                position: fixed;
-                inset: 0;
-                z-index: 1000;
-                pointer-events: none;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+    .bio-sidebar-placeholder {
+        width: 35%;
+        border-right: 5px double var(--meat-red);
+        background: rgba(10, 2, 2, 0.4);
+    }
 
-            .clinical-box {
-                border: 1px solid #222;
-                background: #050505;
-                padding: 20px;
-                pointer-events: all;
-                position: relative;
-                width: 420px;
-                transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
-            }
+    .user-content {
+        width: 65%;
+        padding: 60px;
+        background: rgba(5, 2, 2, 0.95);
+        display: flex;
+        flex-direction: column;
+    }
 
-            .clinical-box.initial {
-                position: fixed;
-                top: 14vh;
-                left: 20px;
-                transform: none;
-            }
-            .clinical-box.focus {
-                transform: scale(1.6);
-                border: 2px solid var(--meat-red);
-                box-shadow: 0 0 60px rgba(90, 6, 6, 0.4);
-            }
+    #secret-logs {
+        margin-top: 10px;
+        flex-grow: 1;
+        overflow-y: hidden;
+        border-left: 2px solid var(--meat-red);
+        padding-left: 15px;
+        display: flex;
+        flex-direction: column-reverse;
+        mask-image: linear-gradient(to top, black 80%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);
+    }
 
-            .spo2-row {
-                display: flex;
-                justify-content: space-between;
-                color: var(--spo2-cyan);
-                align-items: flex-end;
-            }
-            .spo2-bar-container {
-                width: 30px;
-                height: 80px;
-                border: 1px solid var(--spo2-cyan);
-                position: relative;
-            }
-            #v-oxy-bar {
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                background: var(--spo2-cyan);
-            }
+    #secret-logs p {
+        margin-bottom: 5px;
+        font-size: clamp(0.8rem, 3.5vw, 1.1rem);
+        line-height: 1.3;
+        white-space: pre-wrap;
+        animation: terminal-flicker 0.15s infinite;
+    }
 
-            #v-oxy {
-                font-size: clamp(3.5rem, 10vh, 5.5rem);
-                line-height: 0.9;
-                font-weight: bold;
-            }
+    /* VITALS LAYER */
+    #static-vitals-layer {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-            #heart-canvas {
-                width: 100%;
-                height: 180px;
-                margin-top: 10px;
-                background: #000;
-                display: block;
-            }
-            #recovery-cue {
-                position: absolute;
-                inset: 0;
-                background: rgba(63, 255, 0, 0.15);
-                pointer-events: none;
-                opacity: 0;
-            }
+    .clinical-box {
+        border: 1px solid #222;
+        background: #050505;
+        padding: 20px;
+        pointer-events: all;
+        position: relative;
+        width: 420px;
+        transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
-            #defib-btn {
-                position: fixed;
-                bottom: 12%;
-                left: 50%;
-                transform: translateX(-50%);
-                padding: 25px 50px;
-                background: #1a1a1a;
-                color: #fff;
-                border: 4px solid #444;
-                z-index: 99999;
-                cursor: pointer;
-                display: none;
-                text-align: center;
-            }
-            #defib-btn.active {
-                display: block !important;
-                border-color: #f00;
-            }
+    .clinical-box.initial {
+        position: fixed;
+        top: 14vh;
+        left: 20px;
+        transform: none;
+    }
 
-            #void-overlay {
-                position: fixed;
-                inset: 0;
-                background: #000;
-                color: #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 100000;
-                opacity: 0;
-                pointer-events: none;
-                font-size: 1.5rem;
-                letter-spacing: 5px;
-                text-align: center;
-                padding: 40px;
-            }
-            #void-overlay.active {
-                opacity: 1;
-                pointer-events: all;
-            }
-        </style>
+    .clinical-box.focus {
+        transform: scale(1.6);
+        border: 2px solid var(--meat-red);
+        box-shadow: 0 0 60px rgba(90, 6, 6, 0.4);
+    }
+
+    .spo2-row {
+        display: flex;
+        justify-content: space-between;
+        color: var(--spo2-cyan);
+        align-items: flex-end;
+    }
+
+    .spo2-bar-container {
+        width: 20px;
+        height: 60px;
+        border: 1px solid var(--spo2-cyan);
+        position: relative;
+    }
+
+    #v-oxy-bar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: var(--spo2-cyan);
+        transition: height 0.3s ease;
+    }
+
+    #v-oxy {
+        font-size: clamp(3rem, 8vh, 5.5rem);
+        line-height: 0.9;
+        font-weight: bold;
+    }
+
+    #heart-canvas {
+        width: 100%;
+        height: 180px;
+        margin-top: 10px;
+        background: #000;
+        display: block;
+    }
+
+    /* DEFIB & OVERLAYS */
+    #defib-btn {
+        position: fixed;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 20px 40px;
+        background: #1a1a1a;
+        color: #fff;
+        border: 4px solid #444;
+        z-index: 99999;
+        cursor: pointer;
+        display: none;
+        font-size: 1rem;
+    }
+
+    #defib-btn.active { display: block !important; border-color: #f00; }
+
+    #void-overlay {
+        position: fixed;
+        inset: 0;
+        background: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100000;
+        opacity: 0;
+        pointer-events: none;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #void-overlay.active { opacity: 1; pointer-events: all; }
+</style>
         <script>
             let githubCommitCount = "PENDING...";
 
