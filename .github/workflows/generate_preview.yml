@@ -1,0 +1,38 @@
+name: Generate Random Preview
+on:
+  schedule:
+    - cron: '*/15 * * * *' # Runs every 15 minutes
+  workflow_dispatch:      # Allows you to run it manually from the Actions tab
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Generate Entropy Image
+        run: |
+          # The exact vertical 90-degree command we perfected
+          head -c 37800 /dev/urandom | magick -depth 8 -size 630x20 rgb:- \
+            -rotate 90 \
+            -scale 1200x630! \
+            preview.png
+
+      - name: Commit and Push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add preview.png
+          # Use 'git commit' only if there are changes
+          if ! git diff --quiet; then
+            git commit -m "chore: entropy rotation [skip ci]"
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
+          fi
