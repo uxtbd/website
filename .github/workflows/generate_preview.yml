@@ -18,8 +18,8 @@ jobs:
 
       - name: Generate Entropy Image
         run: |
-          # The exact vertical 90-degree command we perfected
-          head -c 37800 /dev/urandom | magick -depth 8 -size 630x20 rgb:- \
+          # Ubuntu runners usually have IM v6 (convert)
+          head -c 37800 /dev/urandom | convert -depth 8 -size 630x20 rgb:- \
             -rotate 90 \
             -scale 1200x630! \
             preview.png
