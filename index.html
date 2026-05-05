@@ -1,118 +1,133 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="title" content="UXTBd" />
-		<meta
-			name="description"
-			content="Systems specialist & software engineer portfolio. Linux kernel optimization, hardware DIY, and technical research."
-		/>
-		<meta name="theme-color" content="#72B01D" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="UXTBd" />
+    <meta
+      name="description"
+      content="Systems specialist & software engineer portfolio. Linux kernel optimization, hardware DIY, and technical research."
+    />
+    <meta name="theme-color" content="#72B01D" />
 
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://kthread.dev/" />
-		<meta property="og:title" content="UXTBd" />
-		<meta
-			property="og:description"
-			content="Software engineer and systems specialist focused on performance and technical avant-garde."
-		/>
-		<meta property="og:image" content="https://kthread.dev/preview.png" />
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://kthread.dev/" />
-		<meta property="twitter:title" content="UXTBd" />
-		<meta
-			property="twitter:description"
-			content="Software engineer and systems specialist focused on performance and technical avant-garde."
-		/>
-		<meta property="twitter:image" content="https://kthread.dev/preview.png" />
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
-		<title>UXTBd</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<canvas id="mosh-buffer"></canvas>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kthread.dev/" />
+    <meta property="og:title" content="UXTBd" />
+    <meta
+      property="og:description"
+      content="Software engineer and systems specialist focused on performance and technical avant-garde."
+    />
+    <meta property="og:image" content="https://kthread.dev/preview.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://kthread.dev/" />
+    <meta property="twitter:title" content="UXTBd" />
+    <meta
+      property="twitter:description"
+      content="Software engineer and systems specialist focused on performance and technical avant-garde."
+    />
+    <meta property="twitter:image" content="https://kthread.dev/preview.png" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;"
+    />
+    <title>UXTBd</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-		<main id="ui-layer">
-			<header class="ui-header">
-				<div class="status-indicator">WELCOME!</div>
-				<div class="marquee-window">
-					<div class="marquee-content" id="face-stream"></div>
-				</div>
-				<div class="site-title">UXTBd</div>
-			</header>
+  <body>
+    <canvas id="mosh-buffer"></canvas>
 
-			<aside class="ui-sidebar">
-				<nav>
-					<ul>
-						<li><a href="#projects">PROJECTS</a></li>
-						<li><a href="#about">ABOUT_ME</a></li>
-						<li><a href="#contact">CONTACT</a></li>
-					</ul>
-				</nav>
-				<div class="spec-readout">
-					<p>CPU: AMD Ryzen 5 5600XT</p>
-					<p>GPU: AMD Radeon RX 570</p>
-					<p>RAM: 32 GB DDR4 @ 3200 MHz</p>
-					<p>OS: ARCH LINUX</p>
-				</div>
-			</aside>
+    <main id="ui-layer">
+      <header class="ui-header">
+        <div class="status-indicator">WELCOME!</div>
+        <div class="marquee-window">
+          <div class="marquee-content" id="face-stream"></div>
+        </div>
+        <div class="site-title">UXTBd</div>
+      </header>
 
-			<article class="ui-content">
-				<section id="projects" class="content-section active">
-					<div class="portfolio-box">
-						<h2>GENPASSWD</h2>
-						<p>
-							WORK IN PROGRESS SECURE PASSWORD GENERATOR, USING LIBSODIUM, C.
-						</p>
-					</div>
-					<div class="portfolio-box">
-						<h2>THIS_WEBSITE</h2>
-						<p>WORK IN PROGRESS INTERACTIVE WEBSITE/PORTFOLIO.</p>
-					</div>
-					<div class="portfolio-box">
-						<h2>PWNEDBY1400.WIKI</h2>
-						<p>Official game wiki for the Roblox game PWNed by 14:00</p>
-						<p>Area: I manage the entire infrastructure (database, security, performance, privacy)</p>
-					</div>
+      <aside class="ui-sidebar">
+        <nav>
+          <ul>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#about">ABOUT_ME</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="spec-readout">
+          <p>CPU: AMD Ryzen 5 5600XT</p>
+          <p>GPU: AMD Radeon RX 570</p>
+          <p>RAM: 32 GB DDR4 @ 3200 MHz</p>
+          <p>OS: ARCH LINUX</p>
+        </div>
+      </aside>
 
-					<div class="portfolio-box">
-				                <h2>YOUR_SERVICE!</h2>
-						<p>If you need something hosted, I can do it, I focus exclusively on performance, privacy and security to make sure your product works as expected and as safe as possible.</p>
-					</div>
-				</section>
+      <article class="ui-content">
+        <section id="projects" class="content-section active">
+          <div class="portfolio-box">
+            <h2>GENPASSWD</h2>
+            <p>
+              WORK IN PROGRESS SECURE PASSWORD GENERATOR, USING LIBSODIUM, C.
+            </p>
+          </div>
+          <div class="portfolio-box">
+            <h2>THIS_WEBSITE</h2>
+            <p>WORK IN PROGRESS INTERACTIVE WEBSITE/PORTFOLIO.</p>
+          </div>
+          <div class="portfolio-box">
+            <h2>PWNEDBY1400.WIKI</h2>
+            <p>Official game wiki for the Roblox game PWNed by 14:00</p>
+            <p>
+              Area: I manage the entire infrastructure (database, security,
+              performance, privacy)
+            </p>
+          </div>
 
-				<section id="about" class="content-section">
-					<div class="portfolio-box">
-						<h2>ABOUT_ME</h2>
-						<p>NAME: ux, uxtb, uxtdb (he/him), 21.</p>
-						<p>
-							Focus: Kernel Optimization, Cybersecurity, Engineering, Artificial Intelligence (LLMs, Neural Networks, Machine Learning, etc).
-						</p>
-						<p>
-							Likes: cats, computers, robotics, ai.
-						</p>
-						<p>Dislikes: surveillance.</p>
-						<p>Skills: Computer Sciences, Coding (C, Assembly, Rust (learning), Haskell (learning), TypeSript, JavaScript, HTML, CSS, SCSS), NGINX, Networking, Cloudflare, Linux, Windows, BSD, Cybersecurity, Cloud, Hardware (ESP32, ARM/RISC-V)</p>
-					</div>
-				</section>
+          <div class="portfolio-box">
+            <h2>YOUR_SERVICE!</h2>
+            <p>
+              If you need something hosted, I can do it, I focus exclusively on
+              performance, privacy and security to make sure your product works
+              as expected and as safe as possible.
+            </p>
+          </div>
+        </section>
 
-				<section id="contact" class="content-section">
-					<div class="portfolio-box">
-						<h2>CONTACT_ME</h2>
-						<p>Email: dev [at] kthread [dot] dev (fuck you bots)</p>
-						<p>Discord: @.uxtb</p>
-						<p>Location: somewhere, just check my github.</p>
-					</div>
-				</section>
-			</article>
+        <section id="about" class="content-section">
+          <div class="portfolio-box">
+            <h2>ABOUT_ME</h2>
+            <p>NAME: ux, uxtb, uxtdb (he/him), 21.</p>
+            <p>
+              Focus: Kernel Optimization, Cybersecurity, Engineering, Artificial
+              Intelligence (LLMs, Neural Networks, Machine Learning, etc).
+            </p>
+            <p>Likes: cats, computers, robotics, ai.</p>
+            <p>Dislikes: surveillance.</p>
+            <p>
+              Skills: Computer Sciences, Coding (C, Assembly, Rust (learning),
+              Haskell (learning), TypeSript, JavaScript, HTML, CSS, SCSS),
+              NGINX, Networking, Cloudflare, Linux, Windows, BSD, Cybersecurity,
+              Cloud, Hardware (ESP32, ARM/RISC-V)
+            </p>
+          </div>
+        </section>
 
-			<footer class="ui-footer">
-				<div id="local-time">TIME: --:-- [UTC-3]</div>
-				<div class="copyright">2026 // WHAT IS COPYRIGHT? THIS IS GPLV3.</div>
-			</footer>
-		</main>
+        <section id="contact" class="content-section">
+          <div class="portfolio-box">
+            <h2>CONTACT_ME</h2>
+            <p>Email: dev [at] kthread [dot] dev (fuck you bots)</p>
+            <p>Discord: @.uxtb</p>
+            <p>Location: somewhere, just check my github.</p>
+          </div>
+        </section>
+      </article>
 
-		<script src="engine.js"></script>
-	</body>
+      <footer class="ui-footer">
+        <div id="local-time">TIME: --:-- [UTC-3]</div>
+        <div class="copyright">2026 // WHAT IS COPYRIGHT? THIS IS GPLV3.</div>
+      </footer>
+    </main>
+
+    <script src="engine.js"></script>
+  </body>
 </html>
