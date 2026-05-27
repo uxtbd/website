@@ -1,0 +1,17 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:dev@kthread.dev
+Expires: 2027-05-26T15:00:00.000Z
+Encryption: https://kthread.dev/keys/pgp.txt
+Preferred-Languages: en, es
+Canonical: https://kthread.dev/.well-known/security.txt
+Policy: https://kthread.dev/security.txt
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQStBE+104ffeed2CXIeo9JqFnRHWgUCahZRJgAKCRAeo9JqFnRH
+WgOiAQCHt26g4yfryg61hY8u5idO8/NuQ/X55r0TCjZje8AKQAEAn1BPugH7j4U9
+j2YQw7E1RdWRufoZkOp5g0ryv7WXnwI=
+=cmOR
+-----END PGP SIGNATURE-----
