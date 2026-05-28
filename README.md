@@ -1,3 +1,1 @@
-# Personal Website
-
-ran by a flesh automaton, animated by neurotransmitters
+there is no reason whatsoever to add a readme here but oh well
