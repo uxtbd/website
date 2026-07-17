@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "",
+  "description": "personal website",
   "main": "index.js",
   "scripts": {
     "serve": "eleventy --serve --formats=md",
@@ -22,5 +22,8 @@
     "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "markdown-it": "^14.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.5"
   }
 }

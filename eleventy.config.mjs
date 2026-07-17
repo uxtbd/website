@@ -1,21 +1,24 @@
 import markdownIt from "markdown-it";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import { transform } from "lightningcss";
 
 export default function (eleventyConfig) {
-	eleventyConfig.setInputDirectory("src");
-	eleventyConfig.setOutputDirectory("dist");
-	eleventyConfig.setIncludesDirectory("_includes");
-	eleventyConfig.setLayoutsDirectory("_layouts");
+  eleventyConfig.setInputDirectory("src");
+  eleventyConfig.setOutputDirectory("dist");
+  eleventyConfig.setIncludesDirectory("_includes");
+  eleventyConfig.setLayoutsDirectory("_layouts");
 
-	let options = {
-		html: true,
-		breaks: true,
-		linkify: true,
-	};
+  eleventyConfig.addPassthroughCopy("src/assets/*.css"); // CSS files
+  eleventyConfig.addPassthroughCopy("src/scripts/*.js"); // JavaScript files
 
-	eleventyConfig.addPlugin(syntaxHighlight);
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true,
+  };
 
-	eleventyConfig.setLibrary("md", markdownIt(options));
-	eleventyConfig.amendLibrary("md", (mdLib) => mdLib.enable("code"));
+  eleventyConfig.addPlugin(syntaxHighlight);
 
-};
+  eleventyConfig.setLibrary("md", markdownIt(options));
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.enable("code"));
+}
