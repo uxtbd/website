@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"serve": "eleventy --serve",
-		"build": "eleventy"
+		"build": "eleventy",
+		"prettier": "prettier . --use-tabs -w"
 	},
 	"keywords": [],
 	"author": "uxtbd",
