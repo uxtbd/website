@@ -45,7 +45,7 @@ export default function (eleventyConfig) {
 		},
 	});
 	eleventyConfig.addPlugin(readingTime);
-	// eleventyConfig.addPlugin(githubRepos, { userAccount: "uxtbd" });
+	eleventyConfig.addPlugin(githubRepos, { userAccount: "uxtbd" });
 	eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
 		extensions: ["css", "js", "png", "jpg", "mp4"], // What file extensions are accepted when locating assets.
 		hashAlgorithm: "sha256", // What hash method to pass to the hash function. See Node.js' crypto.createHash documentation.
