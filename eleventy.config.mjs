@@ -2,6 +2,9 @@ import markdownIt from "markdown-it";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import readingTime from "eleventy-plugin-reading-time";
+import githubRepos from "eleventy-plugin-github-repos";
+
+const apiKey = process.env.PUBLIC_REPOS_API;
 
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
@@ -42,4 +45,5 @@ export default function (eleventyConfig) {
 		}
 	});
 	eleventyConfig.addPlugin(readingTime);
+	eleventyConfig.addPlugin(githubRepos, { userAccount: 'uxtbd', apiKey });
 }

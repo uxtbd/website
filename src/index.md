@@ -18,3 +18,14 @@ int main(void) {
 ```
 
 # Projects
+{% if collections.githubRepos.length > 0 %}
+  <div id="projects">
+  {% for repo in collections.githubRepos %}
+      {% if repo.description.length > 0 %}
+      <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a> - <span>{{ repo.description }}</span>
+      {% endif %}
+  {% endfor %}
+  </div>
+{% else %}
+  <p>No repository data to display</p>
+{% endif %}
