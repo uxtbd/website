@@ -1,6 +1,5 @@
 import markdownIt from "markdown-it";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import { transform } from "lightningcss";
 
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
