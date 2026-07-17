@@ -4,8 +4,8 @@
   "description": "personal website",
   "main": "index.js",
   "scripts": {
-    "serve": "eleventy --serve --formats=md",
-    "build": "eleventy --formats=md"
+    "serve": "eleventy --serve",
+    "build": "eleventy"
   },
   "keywords": [],
   "author": "uxtbd",
@@ -20,7 +20,9 @@
   "type": "module",
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-plugin-rss": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "eleventy-plugin-reading-time": "^0.0.1",
     "markdown-it": "^14.3.0"
   },
   "devDependencies": {

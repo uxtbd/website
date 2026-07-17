@@ -38,7 +38,18 @@ url:
 		/>
   </head>
   <body>
-      {{ content | safe }}
+  <article role="article">
+    <header>
+        <h1>{{ title }}</h1>
+        <p>
+            <span class="meta__stats">About {{ content | readingTime }} reading time</span>
+        </p>
+    </header>
+ 
+    <div>
+        {{ content | safe }}
+    </div>
+</article>
   </body>
 </html>
 
