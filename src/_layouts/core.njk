@@ -10,7 +10,7 @@ url:
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow, none, noarchive, nosnippet, noimageindex, nocache">
-    <meta name="referrer" content="strict-origin" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
     <meta name="color-scheme" content="dark" />
 
     <title>{{ title }}</title>
@@ -40,6 +40,7 @@ url:
 		/>
   </head>
   <body>
+      {% poison %}
       {{ content | safe }}
   </body>
 </html>
