@@ -9,20 +9,10 @@ description: "software engineer"
 ## About me
 
 21-year-old software engineer from south america, I am quite a pleco fan, I love plecos, I love cats as well.
-
 I can code in C, x86 Assembly, some Rust, C is my primary language for now... Rust will eventually take its place
-
 Currently a contributor at [AerynOS](https://aerynos.com/), give it a try!
 
-# Projects
-
-{% if collections.githubRepos.length > 0 -%}
-{%- for repo in collections.githubRepos -%}
-<a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>{% if repo.description.length > 0 %} - <span>{{ repo.description }}</span>{% endif %}<br>
-{%- endfor -%}
-{%- else -%}
-<p>No repository data to display</p>
-{%- endif %}
+You should check out my [blogs](/posts/), I tend to rant about stuff, maybe my [projects](/projects/) too!
 
 # Contact
 

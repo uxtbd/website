@@ -12,9 +12,9 @@ export default function (eleventyConfig) {
 	eleventyConfig.setIncludesDirectory("_includes");
 	eleventyConfig.setLayoutsDirectory("_layouts");
 
-	eleventyConfig.addPassthroughCopy("src/**.css"); // CSS files
-	eleventyConfig.addPassthroughCopy("src/scripts/**.js"); // JavaScript files
-	eleventyConfig.addPassthroughCopy("src/assets/**/*.{png,jpg,mp4}"); // Media files
+	eleventyConfig.addPassthroughCopy("src/**/*.css");
+	eleventyConfig.addPassthroughCopy("src/**/*.js");
+	eleventyConfig.addPassthroughCopy("src/**/*.{png,jpg,jpeg,mp4}");
 
 	let options = {
 		html: true,
@@ -27,11 +27,11 @@ export default function (eleventyConfig) {
 
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(feedPlugin, {
-		type: "atom", // or "rss", "json"
+		type: "atom",
 		outputPath: "/rss.xml",
 		collection: {
-			name: "blogs", // iterate over `collections.posts`
-			limit: 10, // 0 means no limit
+			name: "posts",
+			limit: 0,
 		},
 		metadata: {
 			language: "en",
@@ -46,11 +46,4 @@ export default function (eleventyConfig) {
 	});
 	eleventyConfig.addPlugin(readingTime);
 	eleventyConfig.addPlugin(githubRepos, { userAccount: "uxtbd" });
-	eleventyConfig.addPlugin(eleventyAutoCacheBuster, {
-		extensions: ["css", "js", "png", "jpg", "mp4"], // What file extensions are accepted when locating assets.
-		hashAlgorithm: "sha256", // What hash method to pass to the hash function. See Node.js' crypto.createHash documentation.
-	});
-	eleventyConfig.addPlugin(poison, {
-		includeCSS: true,
-	});
 }

@@ -4,8 +4,8 @@
 	"description": "personal website",
 	"main": "index.js",
 	"scripts": {
-		"serve": "eleventy --serve",
-		"build": "eleventy",
+		"serve": "prettier . --use-tabs -w && eleventy --serve",
+		"build": "prettier . --use-tabs -w && eleventy",
 		"prettier": "prettier . --use-tabs -w"
 	},
 	"keywords": [],

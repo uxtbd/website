@@ -1,9 +1,8 @@
 ---
-title: 
+title:
 description:
-url: 
+url:
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,17 +31,27 @@ url:
     <meta name="twitter:description" content="{{ description }}">
     <meta name="twitter:image" content="">
     <meta name="twitter:image:alt" content="">
-    <link rel="stylesheet" href="core.css">
-    <link
-			href="https://unpkg.com/prismjs@1.30.0/themes/prism-tomorrow.css"
-      type="text/css"
-			rel="stylesheet"
-		/>
+
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/core.css">
+    <link href="https://unpkg.com/prismjs@1.30.0/themes/prism-tomorrow.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
-      {% poison %}
+      <header>
+          <h1 id="page-title">{{ title }}</h1>
+          <nav aria-label="Main Navigation">
+              <a href="/">Home</a>
+              <span class="nav-separator" aria-hidden="true">|</span>
+              <a href="/posts/">Blogs</a>
+              <span class="nav-separator" aria-hidden="true">|</span>
+              <a href="/projects/">Projects</a>
+          </nav>
+      </header>
       {{ content | safe }}
-      {% poison %}
   </body>
 </html>
-
