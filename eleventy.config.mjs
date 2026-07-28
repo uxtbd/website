@@ -6,6 +6,7 @@ import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import pluginTOC from "eleventy-plugin-toc";
 import recentChanges from "eleventy-plugin-recent-changes";
+import pluginCleanUrls from "@inframanufaktur/eleventy-plugin-clean-urls";
 
 export default function (eleventyConfig) {
 	eleventyConfig.setInputDirectory("src");
@@ -49,4 +50,5 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(githubRepos, { userAccount: "uxtbd" });
 	eleventyConfig.addPlugin(pluginTOC);
 	eleventyConfig.addPlugin(recentChanges);
+	eleventyConfig.addPlugin(pluginCleanUrls);
 }

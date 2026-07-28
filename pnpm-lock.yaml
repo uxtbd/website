@@ -270,6 +270,9 @@ importers:
       '@11ty/eleventy-plugin-syntaxhighlight':
         specifier: ^5.0.2
         version: 5.0.2
+      '@inframanufaktur/eleventy-plugin-clean-urls':
+        specifier: ^1.0.2
+        version: 1.0.2
       eleventy-auto-cache-buster:
         specifier: ^0.9.2
         version: 0.9.2
@@ -408,6 +411,13 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@inframanufaktur/clean-urls@1.0.1':
+    resolution: {integrity: sha512-WCYk+lp0Cu+jts6C3myAuzEwZov7ZjYMNkXjk3RhIU3I5wXrrZQNAn7Si7376MEpTGWEBsVU4rlwW4UU6SKTWA==}
+    engines: {node: '>=10'}
+
+  '@inframanufaktur/eleventy-plugin-clean-urls@1.0.2':
+    resolution: {integrity: sha512-pdSXyzShC7x0rO0ujjqA7Zeq9n6lLXVYFCAf+Wm9lpAJ0gY0eDMbYqkrqs8GaWwkNAhhpXu/yJUFxiTWdET3Xg==}
 
   '@rgrove/parse-xml@4.2.3':
     resolution: {integrity: sha512-Jhlb+0zYez1T1yXUQs3F1qAtFuJljBVNdy9TKmLDauAXkxsOXopKYOyQ5Wm6SvP3fycav0GviX4Y15WWhGetMw==}
@@ -550,6 +560,9 @@ packages:
   css-what@6.2.2:
     resolution: {integrity: sha512-u/O3vwbptzhMs3L1fQE82ZSLHQQfto5gyZzwteVIEyeaY5Fc7R4dapF/BvRoSYFeqfBk4m0V1Vafq5Pjv25wvA==}
     engines: {node: '>= 6'}
+
+  cssom@0.5.0:
+    resolution: {integrity: sha512-iKuQcq+NdHqlAcwUY0o/HL69XQrUaQdMjmStJ8JFmUaiiQErlhrmuigkg/CU4E2J0IyUKUrMAgl36TvN67MqTw==}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -810,11 +823,17 @@ packages:
     resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
     engines: {node: '>=6.0'}
 
+  html-escaper@3.0.3:
+    resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
+
   htmlparser2@10.1.0:
     resolution: {integrity: sha512-VTZkM9GWRAtEpveh7MSF6SjjrpNVNNVJfFup7xTY3UpFtm67foy9HDVXneLtFVt4pMz5kZtgNcvCniNFb1hlEQ==}
 
   htmlparser2@7.2.0:
     resolution: {integrity: sha512-H7MImA4MS6cw7nbyURtLPO1Tms7C5H602LRETv95z1MxO/7CP7rDVROehUYeYBUYEON94NXXDEPmZuq+hX4sog==}
+
+  htmlparser2@8.0.2:
+    resolution: {integrity: sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==}
 
   http-equiv-refresh@2.0.1:
     resolution: {integrity: sha512-XJpDL/MLkV3dKwLzHwr2dY05dYNfBNlyPu4STQ8WvKCFdc6vC5tPXuq28of663+gHVg03C+16pHHs/+FmmDjcw==}
@@ -918,6 +937,9 @@ packages:
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
+
+  linkedom@0.14.26:
+    resolution: {integrity: sha512-mK6TrydfFA7phrnp+1j57ycBwFI5bGSW6YXlw9acHoqF+mP/y+FooEYYyniOt5Ot57FSKB3iwmnuQ1UUyNLm5A==}
 
   linkify-it@5.0.2:
     resolution: {integrity: sha512-ONTm2jCMAVZjgQa/Fy1kScXsuOoF5NPTsoFBdE1KVIZ2vAh/r9+Bqo+0jINCBYnavTPQZz38QzFTme79ENoN3Q==}
@@ -1222,6 +1244,9 @@ packages:
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
+  uhyphen@0.2.0:
+    resolution: {integrity: sha512-qz3o9CHXmJJPGBdqzab7qAYuW8kQGKNEuoHFYrBwV6hWIMcpAmxDLXojcHfFr9US1Pe6zUswEIJIbLI610fuqA==}
+
   undici@7.29.0:
     resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
     engines: {node: '>=20.18.1'}
@@ -1443,6 +1468,13 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
+  '@inframanufaktur/clean-urls@1.0.1': {}
+
+  '@inframanufaktur/eleventy-plugin-clean-urls@1.0.2':
+    dependencies:
+      '@inframanufaktur/clean-urls': 1.0.1
+      linkedom: 0.14.26
+
   '@rgrove/parse-xml@4.2.3': {}
 
   '@sindresorhus/slugify@2.2.1':
@@ -1604,6 +1636,8 @@ snapshots:
       nth-check: 2.1.1
 
   css-what@6.2.2: {}
+
+  cssom@0.5.0: {}
 
   debug@2.6.9:
     dependencies:
@@ -1872,6 +1906,8 @@ snapshots:
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
 
+  html-escaper@3.0.3: {}
+
   htmlparser2@10.1.0:
     dependencies:
       domelementtype: 2.3.0
@@ -1885,6 +1921,13 @@ snapshots:
       domhandler: 4.3.1
       domutils: 2.8.0
       entities: 3.0.1
+
+  htmlparser2@8.0.2:
+    dependencies:
+      domelementtype: 2.3.0
+      domhandler: 5.0.3
+      domutils: 3.2.2
+      entities: 4.5.0
 
   http-equiv-refresh@2.0.1: {}
 
@@ -1966,6 +2009,14 @@ snapshots:
     dependencies:
       prelude-ls: 1.2.1
       type-check: 0.4.0
+
+  linkedom@0.14.26:
+    dependencies:
+      css-select: 5.2.2
+      cssom: 0.5.0
+      html-escaper: 3.0.3
+      htmlparser2: 8.0.2
+      uhyphen: 0.2.0
 
   linkify-it@5.0.2:
     dependencies:
@@ -2231,6 +2282,8 @@ snapshots:
       prelude-ls: 1.2.1
 
   uc.micro@2.1.0: {}
+
+  uhyphen@0.2.0: {}
 
   undici@7.29.0: {}
 
