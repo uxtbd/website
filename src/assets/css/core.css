@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wdth,wght@0,75..100,100..700;1,75..100,100..700&display=swap");
+
+:root {
+	--accent: #0c7489;
+	--background: #040404;
+	--background-2: #080808;
+	--text: #d7d9ce;
+
+	background-color: var(--background);
+	color: var(--text);
+	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+}
+
+body {
+	font-family:
+		"IBM Plex Sans",
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		Roboto,
+		sans-serif;
+	font-optical-sizing: auto;
+	display: flex;
+	text-align: left;
+	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+}
+
+a {
+	color: var(--accent);
+}
+
+#mainnav {
+	width: 20%;
+	position: sticky;
+	box-sizing: border-box;
+	z-index: 100;
+	border-right: 2px solid var(--accent);
+	padding: 1rem;
+	flex-direction: column;
+}
+
+.cute-button {
+	image-rendering: auto;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+main,
+article,
+body > div,
+body > section {
+	height: 80%;
+	padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+	body {
+		flex-direction: column;
+	}
+
+	#mainnav {
+		width: 100%;
+		height: auto;
+		position: static;
+	}
+
+	main,
+	article,
+	body > div,
+	body > section {
+		width: 100%;
+		height: auto;
+		box-sizing: border-box;
+	}
+}
+
+@media (max-width: 480px) {
+	#mainnav,
+	main,
+	article,
+	body > div,
+	body > section {
+		padding: 0.75rem;
+	}
+}
