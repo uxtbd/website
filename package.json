@@ -18,7 +18,7 @@
 			"eslint --fix",
 			"prettier --write"
 		],
-		"*.{json,css,md,toml,html}": "prettier --write"
+		"*.{json,css,md,toml,html,njk}": "prettier --write"
 	},
 	"dependencies": {
 		"@11ty/eleventy": "^3.1.6",
@@ -39,7 +39,8 @@
 		"eslint-config-prettier": "^10.1.8",
 		"husky": "^9.1.7",
 		"lint-staged": "^17.2.0",
-		"prettier": "^3.9.6"
+		"prettier": "^3.9.6",
+		"prettier-plugin-nunjucks": "^0.1.5"
 	},
 	"devEngines": {
 		"packageManager": {

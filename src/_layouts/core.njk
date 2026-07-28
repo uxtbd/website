@@ -5,61 +5,83 @@ url:
 ---
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow, none, noarchive, nosnippet, noimageindex, nocache">
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-    <meta name="color-scheme" content="dark" />
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="height=device-height, width=device-width, initial-scale=1"
+		/>
+		<meta
+			name="robots"
+			content="noindex, nofollow, none, noarchive, nosnippet, noimageindex, nocache"
+		/>
+		<meta name="referrer" content="no-referrer-when-downgrade" />
+		<meta name="color-scheme" content="dark" />
 
-    <title>{{ title }}</title>
-    <meta name="title" content="{{ title }}">
-    <meta name="description" content="{{ description }}">
+		<title>{{ title }}</title>
+		<meta name="title" content="{{ title }}" />
+		<meta name="description" content="{{ description }}" />
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url }}">
-    <meta property="og:title" content="{{ title }}">
-    <meta property="og:description" content="{{ description }}">
-    <meta property="og:image" content="">
-    <meta property="og:image:alt" content="">
-    <meta property="og:site_name" content="{{ title }}">
-    <meta property="og:locale" content="en_US">
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="{{ url }}" />
+		<meta property="og:title" content="{{ title }}" />
+		<meta property="og:description" content="{{ description }}" />
+		<meta property="og:image" content="" />
+		<meta property="og:image:alt" content="" />
+		<meta property="og:site_name" content="{{ title }}" />
+		<meta property="og:locale" content="en_US" />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="{{ url }}">
-    <meta name="twitter:title" content="{{ title }}">
-    <meta name="twitter:description" content="{{ description }}">
-    <meta name="twitter:image" content="">
-    <meta name="twitter:image:alt" content="">
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="{{ url }}" />
+		<meta name="twitter:title" content="{{ title }}" />
+		<meta name="twitter:description" content="{{ description }}" />
+		<meta name="twitter:image" content="" />
+		<meta name="twitter:image:alt" content="" />
 
-    <meta name="theme-color" content="#0c7489" />
+		<meta name="theme-color" content="#0c7489" />
 
-    <link rel="preconnect" href="https://unpkg.com">
-    <link rel="dns-prefetch" href="https://unpkg.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://unpkg.com" />
+		<link rel="dns-prefetch" href="https://unpkg.com" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="preload" href="/assets/css/core.css" as="style">
-    <link rel="preload" href="https://unpkg.com/prismjs@1.30.0/themes/prism-tomorrow.css" as="style" crossorigin="anonymous">
+		<link rel="preload" href="/assets/css/core.css" as="style" />
+		<link
+			rel="preload"
+			href="https://unpkg.com/prismjs@1.30.0/themes/prism-tomorrow.css"
+			as="style"
+			crossorigin="anonymous"
+		/>
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/core.css">
-    <link href="https://unpkg.com/prismjs@1.30.0/themes/prism-tomorrow.css" type="text/css" rel="stylesheet" referrerpolicy="strict-origin-when-cross-origin" crossorigin="anonymous" />
-  </head>
-  <body>
-    <header id="mainnav">
-        <h1 id="page-title">{{ title }}</h1>
-        <nav aria-label="Main Navigation">
-            <a href="/">Home</a>
-            <span class="nav-separator" aria-hidden="true">|</span>
-            <a href="/posts/">Blogs</a>
-            <span class="nav-separator" aria-hidden="true">|</span>
-            <a href="/projects/">Projects</a>
-        </nav>
-    </header>
+		<link rel="stylesheet" type="text/css" href="/assets/css/core.css" />
+		<link
+			href="https://unpkg.com/prismjs@1.30.0/themes/prism-tomorrow.css"
+			type="text/css"
+			rel="stylesheet"
+			referrerpolicy="strict-origin-when-cross-origin"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<header id="mainnav">
+			<h1 id="page-title">{{ title }}</h1>
+			<nav aria-label="Main Navigation">
+				<a href="/">Home</a>
+				<span class="nav-separator" aria-hidden="true">|</span>
+				<a href="/posts/">Blogs</a>
+				<span class="nav-separator" aria-hidden="true">|</span>
+				<a href="/projects/">Projects</a>
+			</nav>
+		</header>
 
-    <main>
-        {{ content | safe }}
-    </main>
-</body>
+		<main>{{ content | safe }}</main>
+		<script>
+			NekoType = "mermaid";
+		</script>
+		<h1 id="nl">
+			<script src="https://webneko.net/n20171213.js"></script>
+			<a href="https://webneko.net">Neko</a>
+		</h1>
+	</body>
 </html>
