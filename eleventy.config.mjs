@@ -46,7 +46,7 @@ export default function (eleventyConfig) {
 		},
 	});
 	eleventyConfig.addPlugin(readingTime);
-	//eleventyConfig.addPlugin(githubRepos, { userAccount: "uxtbd" });
+	eleventyConfig.addPlugin(githubRepos, { userAccount: "uxtbd" });
 	eleventyConfig.addPlugin(pluginTOC);
 	eleventyConfig.addPlugin(recentChanges);
 }
