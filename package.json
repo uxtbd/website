@@ -21,7 +21,7 @@
 		"*.{json,css,md,toml,html,njk}": "prettier --write"
 	},
 	"dependencies": {
-		"@11ty/eleventy": "^3.1.6",
+		"@11ty/eleventy": "4.0.0-alpha.10",
 		"@11ty/eleventy-plugin-rss": "^3.0.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
 		"@inframanufaktur/eleventy-plugin-clean-urls": "^1.0.2",

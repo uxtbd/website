@@ -18,6 +18,12 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/**/*.js");
 	eleventyConfig.addPassthroughCopy("src/**/*.{gif,png,jpg,jpeg,mp4,mp3}");
 
+	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
+		if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+			return false;
+		}
+	});
+
 	let options = {
 		html: true,
 		breaks: true,
