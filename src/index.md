@@ -1,10 +1,11 @@
 ---
 layout: core.njk
 title: "/home"
-description: "Software engineer"
+description: >-
+    EVERYTHING HAPPENS FOR A REASON, SOMETIMES THE REASON IS YOU'RE STUPID AND MAKE DUMB DECISIONS
 ---
 
-{{ description }} from South America, I am quite a pleco fan, I love plecos (My favorite one is the L095 Orange Cheek Pinecone Pleco (_Pseudorinelepis cf. genibarbis_), I love cats as well. I can code in **C**, {_x86,arm_} **Assembly**, **Python**, I love learning programming languages whenever I get the chance to.
+Software Engineer from South America, I am quite a pleco fan, I love plecos (My favorite one is the L095 Orange Cheek Pinecone Pleco (_Pseudorinelepis cf. genibarbis_), I love cats as well. I can code in **C**, {_x86,arm_} **Assembly**, **Python**, I love learning programming languages whenever I get the chance to.
 
 Currently a contributor at [AerynOS](https://aerynos.com/), give it a try!
 
